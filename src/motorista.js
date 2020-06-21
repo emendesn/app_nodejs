@@ -1,7 +1,6 @@
 const express = require('express');
 const Motor = require('./tblmotorista');
 const Veicu = require('./tblveiculo');
-const Vei = require('./tblveiculo');
 const router = express.Router();
 
 /*router.get('/', (req, res, next) => {
