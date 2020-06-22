@@ -12,6 +12,11 @@ const vei_schema = new mongo.Schema({
     renavan: {
         type: Number,
         require: true,
+    },
+    motorista: {
+        type: mongo.Schema.Types.ObjectId,
+        ref: 'Mot',
+        require: true,
     }
 });
 

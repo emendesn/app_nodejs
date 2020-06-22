@@ -3,12 +3,6 @@ const Motor = require('./tblmotorista');
 const Veicu = require('./tblveiculo');
 const router = express.Router();
 
-/*router.get('/', (req, res, next) => {
-    res.status(200).send({
-        message: 'Usando GET Motorista'
-    });
-}); */
-
 router.post('/cad_mot', async (req, res ) => {
     const { cpf } = req.body;
 
@@ -47,13 +41,14 @@ router.delete('/dlt_mot/:Id', async (req, res ) => {
 
 router.put('/upd_mot/:Id', async (req, res ) => {
     try {
-        const { proprietario, placa, renavan } = req.body;
+        const { nome, sobrenome, cpf, nascimento, status, cadastro } = req.body;
+        const atualiza = Date.now;
 
-        const mot = await Motor.findByIdAndUpdate(req.params.Id, { proprietario, placa, renavan }, { new: true } );
+        const mot = await Motor.findByIdAndUpdate(req.params.Id, { nome, sobrenome, cpf, nascimento, status, cadastro, atualiza }, { new: true } );
 
         return res.send( { mot } );
     } catch (err) {
-        return res.status(400).send({ error: 'Falha ao atulizar dados do veiculo' } )
+        return res.status(400).send({ error: 'Falha ao atulizar dados do motorista' } )
     } ;
 });
 
@@ -115,11 +110,11 @@ router.put('/cad_vei_mot/:Id', async (req, res ) => {
         const mot_vei = await Motor.findById( req.params.Id );
 
         await Promise.all( veiculos.map( async Vei => { 
-            const motoristaVeiculo = new Vei( { ...veiculos, mot_vei: mot_vei._Id });
+            const motoristaVeiculo = new Vei( { ...Vei, mot_vei: mot_vei._Id });
     
             await motoristaVeiculo.save();
 
-            mot_vei.veiculos.push();
+            mot_vei.veiculos.push(motoristaVeiculo);
 
         }));
 
