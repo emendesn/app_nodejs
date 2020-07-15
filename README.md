@@ -1,5 +1,6 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/emendesn/app_nodejs)
 ![GitHub](https://img.shields.io/github/license/emendesn/app_nodejs)
+![Twitter Follow](https://img.shields.io/twitter/follow/emendesn?label=seguir&style=social)
 # app_nodejs
   - API Rest nodejs com MongoDB
 
