@@ -1,11 +1,11 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/emendesn/app_nodejs)
 ![GitHub](https://img.shields.io/github/license/emendesn/app_nodejs)
 # app_nodejs
-API Rest nodejs com MongoDB
+  - API Rest nodejs com MongoDB
 
-#Bibliotecas
-boby-parserd
-mongose
+## Bibliotecas
+  - boby-parserd
+  - mongose
 
 ## Acesso ao cadastro de motoristas onde a validacao ocorre pelo numero do CPF
 http://localhost:3000/motorista/cad_mot
